@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="num1">ENTER NUMBER 1 :</label>
+    <input type="number" name="num1" id="num1"><br> 
+    <br>  
+    <label for="num2">ENTER NUMBER 2 :</label>
+    <input type="number" name="num2" id="num2"></input><br>
+    <br>
+    <label for="op">Enter The Operator &nbsp;&nbsp;  : 
+    </label>
+    <select id="op">
+        
+        <option value="" disabled selected>Select a operator</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="^">Power Of</option>
+        
+    </select>
+    <br>
+    <br>
+    <button onclick="calc()">CALCULATE</button>
+    <br>
+    <br>
+    <label for="output">RESULT &nbsp;:</label>
+    <input type="text" name="output" id="output" value="0" readonly style="width: 300px;">
+</body>
+    <script>
+        function calc(){
+        let a=parseInt(document.getElementById("num1").value);
+        let b=parseInt(document.getElementById("num2").value);
+        let c=document.getElementById("op").value;
+        let d=document.getElementById("output")
+        switch(c){
+            case "+":
+                d.value=a+b
+                break;
+            case "-":
+                d.value=a-b
+                break;
+            case "*":
+                d.value=a*b
+                break;
+            case "/":
+                d.value= (b!=0)? a/b : "cannot divided by zero"
+                break;
+            case "%":
+                d.value=a%b
+                break;
+            case "^":
+                d.value=a**b
+                break;
+            default:
+                d.value="PLEASE  ENTER  A VALID OPERTORS (+ , - , % , * , / , ^ )"
+        }
+    }
+    </script>
+</html>
